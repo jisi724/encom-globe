@@ -82,7 +82,7 @@ var createParticles = function(){
         "   gl_FragColor = vColor;",
         "   float depth = gl_FragCoord.z / gl_FragCoord.w;",
         "   float fogFactor = smoothstep(" + parseInt(this.cameraDistance) +".0," + (parseInt(this.cameraDistance+300)) +".0, depth );",
-        "   vec3 fogColor = vec3(0.0);",
+        "   vec3 fogColor = vec3(0.149,0.141,0.912);",
         "   gl_FragColor = mix( vColor, vec4( fogColor, gl_FragColor.w ), fogFactor );",
         "}"
     ].join("\n");
