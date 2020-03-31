@@ -82,7 +82,7 @@ var createParticles = function(){
         "   gl_FragColor = vColor;",
         "   float depth = gl_FragCoord.z / gl_FragCoord.w;",
         "   float fogFactor = smoothstep(" + parseInt(this.cameraDistance) +".0," + (parseInt(this.cameraDistance+300)) +".0, depth );",
-        "   vec3 fogColor = vec3(0.067,0.067,0.322);", // #111152
+        "   vec3 fogColor = vec3(0.055,0.039,0.219);", // #0e0a38
         "   gl_FragColor = mix( vColor, vec4( fogColor, gl_FragColor.w ), fogFactor );",
         "}"
     ].join("\n");
@@ -316,7 +316,7 @@ function Globe(width, height, opts){
 
     this.setScale(this.scale);
 
-    this.renderer = new THREE.WebGLRenderer( { antialias: true } );
+    this.renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
     this.renderer.setSize( this.width, this.height);
 
     this.renderer.gammaInput = true;
